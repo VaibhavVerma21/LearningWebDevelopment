@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emmet</title>
+</head>
+
+
+
+
+<body>
+    <!-- Basic Emmet -->
+
+    <div class="container"></div><!-- div.container -->    <!-- .classname -->
+    <div id="main"></div><!-- div#main -->    <!-- #idname -->
+    <div class="container bg-black" id="main"></div><!-- div.container.bg-black#main -->
+
+    <!-- element[attribute = value] -->
+    <p title="Title"></p><!-- p[title="Title"] -->
+    <img src="Vaibhav.jpg" alt=""><!-- img[src="Vaibhav.jpg"] -->
+
+    <p>Vaibhav is a good boy</p><!-- p{Vaibhav is a good boy} -->
+    <!-- Note: p{lorem10}  will not work. It will give result as <p>lorem10</p> -->
+
+
+
+    <!-- Parent-Child -->
+    <div>
+        <ul>
+            <li></li><!-- div>ul>li -->
+        </ul>
+    </div>
+
+
+    <!-- Adding Sibling -->
+    <div>
+        <p></p>
+        <p></p>
+        <!-- div>p+p -->
+    </div>
+
+    <!-- Multiplication -->
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li><!-- ul>li*5 -->
+        <li></li>
+        <li></li>
+    </ul>
+
+    <!-- Grouping -->
+    <div>
+        <nav>
+            <ul>
+                <!-- div>(nav>ul>li*2>a)+fotter>p -->
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+            </ul>
+        </nav>
+        <fotter>
+            <p></p>
+        </fotter>
+    </div>
+
+
+
+    
+</body>
+</html>
