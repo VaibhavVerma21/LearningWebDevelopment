@@ -98,6 +98,170 @@
 
     <hr><hr><hr>
 
+    <video src="../videos/file.mp4" controls autoplay muted height="500px">
+        This will show up when video fails to load
+        <!-- src tells address of video -->
+        <!-- Control tells if the video will have controls -->
+        <!-- autoplay tells if the video will automatically start playing -->
+        <!-- muted tells if the video will be muted when it starts -->
+        <!-- height and width are self explanatory -->
+    </video>
+
+    <video controls height="500px">
+        <source src="../videos/file.mkv fail">
+        <source src="../videos/file.mp4 fail">
+        <source src="../videos/fail.mp4"><!-- This will load when first one fails to load -->
+    </video>
+
+    <hr>
+
+    <audio src="../audio/Maroon 5 - Beautiful Mistakes.mp3" autoplay controls muted>This will show up when audio fails to load</audio>
+    <!-- same as video except height and width because that doesn't make sence -->
+
+    <hr>
+
+    <table border cellpadding="20px" cellspacing="5px" bordercolor="Blue">
+        <!-- border is used to add border -->
+        <!-- cellpadding is used to create distance inside cells and its content -->
+        <!-- cellspacing is used to create distance between cells -->
+        <!-- bordercolor is used to set color of border -->
+        <tr>
+            <th>Sr no.</th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>English</td>
+            <td colspan="2">Science</td><!-- to merge right column with current column -->
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>English</td>
+            <td>Science</td>
+            <td rowspan="2">Computer</td><!-- to merge row below with current row -->
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>English</td>
+            <td>Science</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <form>
+        <fieldset>
+            <legend>User Details!!!!</legend><!-- adds the text within its tag to the top of the box in a different way. see web page -->
+
+            <label for="name">Enter your name here:</label><!-- label function like this that when i click on "enter your name here" it will automatically select the tag with the same id as in for. In this case when i click on "enter your name here", it will select the name text field that is below this -->
+            <input type="text" name="name" id="name"><!-- id is a unique indentifer for that field/tag. name is the field that is passed to the backend when form is submited -->
+            <br>
+
+            <label for="email">Enter your email</label>
+            <input type="email" name="email" id="email">
+            <br>
+    
+            <label for="address">Enter your address here:</label>
+            <textarea name="address" id="address" cols="30" rows="10">This will be the initial text in the text box/area</textarea><!-- When you want a new line in <input type="text"> and press enter, it just submits the form. Therefor we need textarea to enter bigger texts with multiple lines -->
+            <br>
+    
+            <label for="DOB">Select date of birth:</label>
+            <input type="date" name="DOB" id="DOB">
+            <br>
+    
+            <labal for="password">Enter your password here:</labal>
+            <input type="password" name="password" id="password">
+            <br>
+    
+            Select Gender: <br>
+            <label for="male">Male:</label>
+            <input type="radio" name="gender" id="male" value="male">
+            <br><!-- Name field of same set of radio box should be same for them to work properly -->
+            <label for="female">Female:</label>
+            <input type="radio" name="gender" id="female" value="female"><!-- Value tag tells the receving end what is the value of the option the user decided to select -->
+            <br>
+    
+            Select Favourite Movies: <br>
+            <label for="Avengeres">Avengeres</label>
+            <input type="checkbox" name="Avengeres" id="Avengeres">
+            <br>
+            <label for="Thor">Thor</label>
+            <input type="checkbox" name="Thor" id="Thor">
+            <br>
+            <label for="IronMan">Iron Man</label>
+            <input type="checkbox" name="IronMan" id="IronMan">
+            <br>
+    
+            <input type="submit" value="This is what displays within the sumbit box">
+        </fieldset><!-- fieldset engulfes a form or a part of it within a box -->
+    </form>
+
+    <hr>
+
+    <form method="get"> 
+        <!-- values of form stored in the url. Only good for non sensitive data. Rarely used tho -->
+        <fieldset>
+            <legend>Get Form</legend>
+            <input type="text" name="name" id="name">
+            <input type="submit" value="submit">
+        </fieldset>
+    </form>
+    <form method="post" target="_blank" action="handler.php">
+        <!-- values are forwaded to a post handler -->
+        <!-- target="_blank" forwards to a new tab -->
+        <!-- action="handler.php" forwards it to handler.php on submitting the form -->
+        <fieldset>
+            <legend>Post Form</legend>
+            <input type="text" name="name" id="name">
+            <input type="submit" value="submit">
+        </fieldset>
+    </form>
+
+    <hr>
+
+    <form>
+        <fieldset>
+            <legend>Some extra attributes</legend>
+
+            <span>Placeholder:</span>
+            <input type="text" placeholder="As you will start typing this will go away">
+            <span>Example:</span>
+            <input type="email" placeholder="a@email.com">
+            <br>
+
+            <span>Value:</span>
+            <input type="text" value="Initial Value. User can change it.">
+            <span>Example:</span>
+            <input type="text" value="Name">
+            <br>
+
+            <span>ReadOnly:</span>
+            <input type="text" value="You can't change value of this" readonly>
+            <br>
+
+            <span>Disabled:</span>
+            <input type="text" value="This input is disabled" disabled>
+            <br>
+
+            <span>Autofocus:</span>
+            <input type="text" value="This text box will be focused when page loads" autofocus><!-- the first autofocus tag will be only considered -->
+            <br>
+
+            <span>Min and Max:</span>
+            <input type="number" placeholder="Enter a number between 0 and 7 (inclusive)" min="0" max="7">
+            <br>
+
+            <input type="submit" value="sumbit">
+        </fieldset>
+    </form>
+
+    <hr><hr><hr>
+
+    
+
+
 
 </body>
 </html>
