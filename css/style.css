@@ -16,5 +16,94 @@
 }
 
 
+/* DATE: 25 Jan 23 */
+
+/* Simple Selectors */
+*{
+    /* Universal Selector */
+    margin: 10px;
+    padding: 0;
+    /* Only use of universal selector known till now */
+}
+h5{ 
+    /* Element Selector */
+    /* It selects all type of that kind of element */
+    background-color: white;
+    /* This will rarely be used */
+} 
+.class-selector{
+    /* Class Selector. */
+    color: blue;
+}
+#id-selector{
+    /* ID Selector. */
+    background-color: yellow;
+}
+.class1, class2, class3{
+    /* Selector List */
+    /* You can use comma , to select more than one class/ID to edit its properties */
+    color: black
+}
+
+/* CSS Combinators */
+div p{
+    /* Descendent selector */
+    /* Points to div as parent class and p as child class */
+    background-color: aqua;
+}
+h3 > p {
+    /* Child selector */
+    /* Points to h3 as parent class and p as child class */
+    background-color: blueviolet;
+    /* Child and Descendent selector are almost same for now */
+}
+main + p{
+    /* Adjacent sibling selector */
+    /* It selects the first element(i.e. 'main' here) and the adjacent second element(i.e. 'p' here) */
+    background-color: brown;
+}
+aside ~ p{
+    /* General sibling selector */
+    /* It selects the first element(i.e. 'aside' here) and the every second element(i.e. 'p' here) after it */
+    /* background-color: chartreuse; */
+}
+/* Attribute selectors */
+[target="_blank"]{
+    /* [attribute="value"] Selector */
+    /* This selector finds the elements with the same attribute and value in the tag */
+    background-color:crimson;
+}
+[alt~="pw"]{
+    /* [attribute~="value"] Selector */
+    /* This selector finds the elements with the same attribute and value(containing a specified word) in the tag */
+    background-color: darkmagenta;
+}
+
+body {
+    /* Activating Fonts from google in every part of body*/
+    font-family: 'Poppins', sans-serif;
+}
+
+#box-model {
+    padding: 10px 2px 10px 2px;/* top right bottom left --> Clockwise direction */
+    /* padding-top: 10px; padding-right: 2px; padding-bottom: 10px; padding-left: 2px; */
+    margin: 5px;
+    border: solid 3px red;
+}
+
+#color {
+    color : #f22efa;
+}
+
+body{
+    background-color: #fff;
+    background-image: url(../images/bg.jpg);
+    /* background-image: url("https://images.pexels.com/photos/7708809/pexels-photo-7708809.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&dpr=1"); */
+    background-repeat: repeat;/* Can be on no-repeat or repeat-x or repeat-y. repeat is default */
+    background-attachment: fixed;/* Makes the image not scroll on scrolling the tab. Default is scroll. Scroll and local look to be same */
+    background-size:cover;/* Both cover and contain maintains aspect ratio of original image. 
+    Cover makes the smallest width and height(while preserving aspect ratio) to cover the whole background image area.
+    Contain makes the largest width and height(while preserving aspect ratio) to fit inside the background image area. */
+}
 
 
