@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
+    <style>
+        #internal {
+            color: red;/* Internal styling */
+        }
+
+        .pra{
+            /* Internal styling */
+            color: white;
+            background-color: black;
+            border: 5px solid red;
+            font-size: 30px;
+            /* Just set "pra" to the class of the elements that you want to have the above properties */
+            /* Limitation: Only works in this file */
+        }
+
+
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <p style="color: blue;">Text</p><!-- Inline styling -->
+    <p id="internal">Text</p><!-- Internal styling -->
+    <p id="external">Text</p><!-- External styling -->
+
+    <hr>
+
+    <p style="color:white; background-color: black; border: 5px solid blue; font-size: 30px;">
+        <!-- Syntax is key:value; -->
+        <!-- Seperated by semicolon ; -->
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias, molestiae.
+        <!-- Inline styling -->
+    </p>
+
+    <hr>
+
+    <p class="pra">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, odio!
+        <!-- Internal styling -->
+    </p>
+
+    <hr>
+
+    <p class="para">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, odio!
+        <!-- External styling -->
+    </p>
+
+    <hr><hr><hr>
+
+    
+</body>
+</html>
