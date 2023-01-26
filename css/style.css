@@ -107,3 +107,72 @@ body{
 }
 
 
+/* DATE: 26 Jan 23 */
+
+.padding{
+    border: 7px solid black;/* For reference */
+    padding: 50px 20px 50px 20px;/* top right bottom left --> Clockwise direction */
+    /* padding-top: 50px; padding-right: 20px; padding-bottom: 50px; padding-left: 20px; */
+    /* If 1 arrgument, padding is given to all sides */
+    /* If 2 arrgument, padding is given to top-bottom and right-left */
+    /* If 3 arrgument, padding is given to top and right-left and bottom */
+    /* If 4 arrgument, padding is given to top and right and bottom and left */
+}
+.margin{
+    border: solid red 2px;
+    width: 200px;/* Makes the width limited to 200px */
+    margin: auto;/* Assigns equal margin to left and right side */
+    /* Margin can also be declared in the way that we have discussed about padding just above this section */
+}
+
+.text-manipulation{
+    color:blueviolet; /* Changes color of text */
+    text-align: justify;/* Left, Right and Centre text-alignment are self explanatory. Justify is a text alignment in which the sentence begins and ends in the same vertical line(like in books) */
+    text-align-last: right;/*Aligns the last line only */
+    direction:ltr;/* Sets direction of text. Idk its practical use, maybe used for different languages */
+    text-decoration: underline;/* Text decorations like underline, etc */
+    text-transform: capitalize;
+    /* Changes to uppercase, lowercase, capitalize(First letter of a word is capital) */
+    text-indent: 80px;/* Tells gap between first line and left margin */
+    letter-spacing: 1px;/* Spacing between each letter */
+    line-height: 25px;/* Height of each line */
+    word-spacing: 5px;/* Spacing between each word */
+}
+
+.font-manipulation{
+    font-family:monospace; /* Sets font only for this class */
+    font-size: 32px;/* Sets font size */
+    font-variant: small-caps;/* Makes the letter go in UPPERCASE but a bit smaller in size */
+    font-weight: 500;/* Higger number = more bold */
+}
+
+.display-inline{
+    display: inline;/* Changes behaviour of p from block to inline */
+    color: brown;
+}
+.display-block{
+    display: block;/* Changes behaviour of span from inline to block */
+    color: seagreen;
+}
+.display-inlineNblock{
+    display: inline-block;/* inline-block gives you the power to control the height and width of the element as the element is no longer a block element(Block element take up full width) */
+    color: lawngreen;
+}
+.display-none{
+    display: none;/* Hides the element */
+}
+
+.width{
+    width: 100px;/* min-width and max-width can also be set */
+    border: 5px red solid;
+    display: inline-block;
+    background-color: grey;
+    /* If we set display:block and min-width low, then the element will take full width of the page as block element like to take up all the width they have available. This I found a think to keep a note of. */
+}
+.height{
+    /* Works same as width. so i'm gonna add something else. */
+    max-height: 50px;
+    background-color: black;
+    color: red;
+    overflow: hidden;/* To hide the extra text that sticks out the box. Comment the overflow line to see the difference */
+}
