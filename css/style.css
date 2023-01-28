@@ -365,3 +365,92 @@ body{
         left: 0px;
     }
 }
+
+
+/* DATE: 28 Jan 23 */
+
+.media-query{
+    height: 100px;
+    text-align: center;
+    font-size: 24px;
+    background-color: red;
+}
+.media-query::after{
+    content: "4th Screen";
+}
+@media (min-width: 768px) and (max-width:1000px){
+    .media-query{
+        background-color: white;
+    }
+    .media-query::after{
+        content: "3rd Screen";
+    }
+}
+@media (400px <= width <= 768px){
+    /* Same as (min-width: 400px) and (max-width:768px) */
+    .media-query{
+        background-color: yellowgreen;
+    }
+    .media-query::after{
+        content: "2nd Screen";
+    }
+}
+@media (max-width:400px){
+    .media-query{
+        background-color: yellow;
+    }
+    .media-query::after{
+        content: "1st Screen";
+    }
+}
+
+.media-query-screens{
+    height: 100px;
+    text-align: center;
+    font-size: 24px;
+}
+@media (width <= 600px){
+    /* Extra small devices (phones, 600px and down) */
+    .media-query-screens{
+        background-color: red;
+    }
+    .media-query-screens::after{
+        content: "Phones"
+    }
+}
+@media (600px <= width <= 768px){
+    /* Small devices (Portrait Tablets and Large Phones, 600px - 768px) */
+    .media-query-screens{
+        background-color: aquamarine;
+    }
+    .media-query-screens::after{
+        content: "Portrait tablets and Large Phones";
+    }
+}
+@media (768px <= width <= 992px){
+    /* Medium devices (Landscape Tablets, 768px - 992px) */
+    .media-query-screens{
+        background-color: blue;
+    }
+    .media-query-screens::after{
+        content: "Landscape Tablets";
+    }
+}
+@media (992px <= width <= 1200px){
+    /* Small devices (Laptops/Desktops, 992px - 1200px) */
+    .media-query-screens{
+        background-color: yellowgreen;
+    }
+    .media-query-screens::after{
+        content: "Laptops/Desktops";
+    }
+}
+@media (1200px <= width){
+    /* Small devices (Large Laptops and Desktops, 1200px and up) */
+    .media-query-screens{
+        background-color: violet;
+    }
+    .media-query-screens::after{
+        content: "Large Laptops and Desktops";
+    }
+}
