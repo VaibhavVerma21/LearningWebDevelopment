@@ -71,7 +71,7 @@ aside ~ p{
 [target="_blank"]{
     /* [attribute="value"] Selector */
     /* This selector finds the elements with the same attribute and value in the tag */
-    background-color:crimson;
+    /* background-color:crimson; */
 }
 [alt~="pw"]{
     /* [attribute~="value"] Selector */
@@ -175,4 +175,193 @@ body{
     background-color: black;
     color: red;
     overflow: hidden;/* To hide the extra text that sticks out the box. Comment the overflow line to see the difference */
+}
+
+
+/* DATE: 27 Jan 23 */
+
+/* To tag the element we do selector:pseudo-class */
+.focus:focus{
+    /* When focus/write in the text box */
+    color: white;
+    background-color: black;
+    font-size: 50px;
+}
+.hover:hover{
+    /* When hover on the element */
+    color:white;
+    background-color: pink;
+}
+.link:link{
+    /* When none of visited, focus, active are happening/active */
+    color: black;
+    background-color: white;
+}
+.visited:visited{
+    /* When the link has been visited */
+    color: green;
+    background-color: white;
+}
+.active:active{
+    /* When clicking or holding or dragging the link */
+    color:blue;
+    background-color: white;
+}
+.first-child:first-child{
+    /* First Occurence of that element */
+    color:black;
+    background-color: yellow;
+}
+.nth-child:nth-child(2n) {
+    /* Nth occurence of that element */
+    /* It is passed between () */
+    /* It can be also number, formula like 1,4, 2n+1, 5n+1 */
+    color:black;
+    background-color: red;
+}
+
+/* To tag the element we do selector::pseudo-element */
+.first-line::first-line{
+    /* Effects first line */
+    color: blue;
+    background-color: #fff;
+}
+.first-letter::first-letter{
+    /* Effects first letter */
+    color: blue;
+    background-color: #fff;
+}
+.before::before{
+    /* Adds the content value in beginning of para */
+    content: " Vaibhav ";
+    color: violet;
+}
+.after::after{
+    /* Adds the content value in ending of para */
+    content: "Vaibhav";
+    color: aqua;
+}
+.selection::selection{
+    /* Sets the property when you select the text. */
+    color:white;
+    background-color: black;
+}
+
+.linear-gradient{
+    /* Makes a linear gradient using the colors passed in the parameters in order */
+    /* You can also give direction like to left, to top, to right */
+    /* More number of same color can be passed to increase quantity of that color in gradient */
+    background-image: linear-gradient(to left, red,yellow ,green,cyan ,blue ,blue);
+    height: 500px;
+}
+.radial-gradient{
+    /* Makes a radial gradient using the colors passed in the parameters in order */
+    /* You can also give shape like circle and ellipse*/
+    /* More number of same color can be passed to increase quantity of that color in gradient */
+    background-image: radial-gradient(circle, red, red,yellow ,green,cyan ,blue);
+    height: 500px;
+}
+.repeating-radial-gradient{
+    /* Makes a repeating radial gradient using the colors passed in the parameters in order */
+    /* You can also give shape like circle and ellipse*/
+    /* More number of same color can be passed to increase quantity of that color in gradient. Percentage of color can also be passed */
+    background-image: repeating-radial-gradient(
+        circle,
+          red 5%, 
+          yellow 10% ,
+          green 15%,
+          cyan 20%,
+          blue 25%
+          );
+    height: 500px;
+}
+.conical-gradient{
+    /* Makes a conical gradient using the colors passed in the parameters in order */
+    /* More number of same color can be passed to increase quantity of that color in gradient. Degree of colors can also be passed */
+    background-image: conic-gradient(
+          red 0deg,
+          yellow 90deg ,
+          green 180deg,
+          cyan 270deg,
+          blue 360deg
+          );
+    height: 500px;
+}
+
+.transition{
+    height: 100px;
+    width: 200px;
+    color: white;
+    background-color: black;
+    transition: height 2s, width 2s, color 2s;/* Tells what needs to be transitioned and with how much time. Anything that changes and is not in transition will change instantly */
+    transition-timing-function: ease-out;/* Seems about same for small time period */
+    transition-delay: 1s;/* Delay between transtion activating */
+}
+.transition:hover{
+    height: 250px;
+    width:500px;
+    color: black;
+    background-color: white;
+}
+
+.animate{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    animation-name: animate;/* Calling the animation */
+    animation-duration: 1s;/* Naked eye can't see animation in 0s but it happens. that's why we have to set the animation-duration */
+    animation-delay: 1s;/* Delay for starting animation */
+    position: relative;/* To make it change position. Will be taught later */
+    animation-iteration-count: 1;/* Tells the no. of times of execution of animation */
+    animation-direction: alternate-reverse;/* Sets the direction of the animation */
+    animation-fill-mode: both; /* Backwards changes the color to 0% color before start, while Forwards changes the color to 100% color after end. Both applies both property */
+
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; This is also a shortcut to do the same as above */
+}
+.linear{
+    animation-timing-function: linear;
+}
+.ease{
+    animation-timing-function: ease;
+}
+.ease-in{
+    animation-timing-function: ease-in;
+}
+.ease-out{
+    animation-timing-function: ease-out;
+}
+.ease-in-out{
+    animation-timing-function: ease-in-out;
+}
+@keyframes animate {
+    /* Defining the animation. Its like a function. You have to call the function */
+
+    /* from { background-color: blue;}
+    to { background-color: yellow;} */
+
+    0% {
+        background-color: blue;
+        top: 0px;
+        left: 0px;
+    }
+    25% {
+        background-color: yellow;
+        top: 0px;
+        left: 200px;
+    }
+    50% {
+        background-color: black;
+        top: 200px;
+        left: 200px;
+    }
+    75% {
+        background-color: aqua;
+        top: 200px;
+        left: 0;
+    }
+    100% {
+        background-color: violet;
+        top: 0px;
+        left: 0px;
+    }
 }
