@@ -454,3 +454,96 @@ body{
         content: "Large Laptops and Desktops";
     }
 }
+
+
+/* DATE: 29 Jan 23 */
+
+.float{
+    background-color: white;
+}
+.float img{
+    float: right;/* Moves/Floats the element to the right inside an containor */
+}
+
+.position{
+    border: 1px solid black;
+}
+.position-fixed{
+    width: 75px;
+    height: 50px;
+    color: white;
+    background-color: black;
+    text-align: center;
+    /* This will keep the tag fixed 5px left and up from bottom-right corner even if we scroll the web page */
+    position: fixed;
+    bottom:600px;
+    right: 5px;
+    /* To make it circular in shape for better UI/UX */
+    border-radius: 50px;
+}
+.position-sticky{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    /* Moves the tag when page is scrolled with 0px gap from top and untill the parent class ends */
+    position: sticky;
+    top: 0px;
+}
+.position-relative{
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    /* It moves the element down 25px and right 150px from its original position */
+    position: relative;
+    top: 25px;
+    left: 150px
+}
+.position-absolute{
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    /* It moves the element down 5655px and right 250px from the starting point of the body */
+    position: absolute;
+    top: 5655px;
+    left: 250px;
+}
+.reference{
+    width: 100px;
+    height: 100px;
+    background-color: white;
+}
+
+.overflow{
+    width: 250px;
+    height: 250px;
+    border: 1px solid red;
+    overflow: scroll;/* Scroll adds a scroll bar to access the content that is hidden. Hidden directly hides extra content and it isn't possible in it to access the overflow data */
+}
+.zindex{
+    border: 1px solid black;
+    height: 180px;
+}
+/* When two or more elements are overlapping, the one with more z-index value has more priority to being displayed on the screen over others */
+.zindex-1{
+    background-color: red;
+    height: 100px;
+    width: 100px;
+    position: relative;
+    top: -5px;
+    z-index: 2;
+}
+.zindex-2{
+    background-color: yellow;
+    height: 100px;
+    width: 100px;
+    position: relative;
+    top: -85px;
+    z-index: 3;
+}
+.zindex-3{
+    background-color: blue;
+    height: 100px;
+    width: 100px;
+    position: relative;
+    top: -160px
+}
