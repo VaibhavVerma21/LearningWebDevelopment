@@ -547,3 +547,69 @@ body{
     position: relative;
     top: -160px
 }
+
+
+/* DATE: 30 Jan 23 */
+
+.flex-box-container-parent{
+    border: solid 1px black;
+    display: flex;/* With inline-flex it functions same as flex but its inline in nature in place of block */
+    flex-direction: row;/* Row makes in horizontal while column makes it vertical. reverse version of it simply reverses the property. Default is row */
+    flex-wrap: nowrap;/* Tells if the elements will wrap in different lines or not. Wrap means that they will retain their set height and width and just take extra space of parent container in place of decreasing their width to fit within the containor when the browser window is shrank or expanded. Reverse mode of wrap is also available */
+    flex-flow: row nowrap; /* Shortcut way to set flex-direction and flex-wrap together. */
+    justify-content: space-evenly;/* Adjusts the content on the main/x axis line. space-around sets equal space to each element. space-evenly sets equal space between each element and the border. space-between sets equal space between elements only. space-around and space-evenly and space-between are different.*/
+    align-items: center;/* Adjusts the content on the cross/y axis line. */
+    align-content: center;/* Idk whats this is */
+    gap: 100px;/* Adds gap of 100px to each side. won't work because of justify-content and align-items. To add specifically in row or column use row-gap or column-gap */
+}
+.flex-box-container{
+    height: 100px;
+    width: 100px;
+    border: solid 1px black;
+}
+.flex-box-container1{
+    background-color: red;
+}
+.flex-box-container2{
+    background-color: yellow;
+}
+.flex-box-container3{
+    background-color: green;
+}
+
+.flex-box-items-parent{
+    border: solid 1px black;
+    display: flex; /* With inline-flex it functions same as flex but its inline in nature in place of block */
+    height: 200px;
+}
+/* Upcoming properties manipulate the child elements and not the parent/container element */
+.flex-box-items{
+    height: 100px;
+    width: 100px;
+    border: solid 1px black;
+}
+.flex-box-items1{
+    background-color: red;
+    order: 5; /* Order is used to arrange flex items with the container. The element/item with least order value will be rendered first */
+    flex-grow: 3;/* It defines how much more space it will occupy compared to other flex-items when there is more availabe space(browser expands) Default is 0 i.e. it will have no effect on grow propotion */
+    flex-shrink: 5;/* Same as glex-grow but in place of growing it is about shrinking */
+    flex-basis: 200px;/* It is used to set the initial size of the flex items before the space is distributed according to flex grow or flex shrink. */
+    flex: 3, 5, 200px; /* Shortcut for setting flex-grow, flex-shrink and flex-basis */
+}
+.flex-box-items2{
+    background-color: yellow;
+    order: 1;
+    flex-grow: 5;
+    flex-shrink: 3;
+    flex-basis: 150px;
+    flex: 5, 3, 150px;
+    align-self: center;/* It is used to align a flex-item(itself) inside its flex container. */
+}
+.flex-box-items3{
+    background-color: green;
+    order: 3;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 100px;
+    flex: 1, 1, 100px;
+}
