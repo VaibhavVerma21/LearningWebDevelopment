@@ -613,3 +613,79 @@ body{
     flex-basis: 100px;
     flex: 1, 1, 100px;
 }
+
+
+/* DATE: 31 Jan 23 */
+
+.grid-parent-container{
+    display: grid;
+    grid-template-columns: auto auto auto;/* The no. of parameters(3 auto's) passed will be equal to the no. of columns formed. 1fr 2fr 1fr can be treated like ratio of 1:2:1. Auto can be used to space the columns evenly.*/
+    grid-template-rows: 500px 200px 200px;/* Works same as grid-template-columns but it defines the height of each row. height, width (in .grid-child) is overwritting it so it isn't showing how the parameters ask it to show. Comment to see the difference. */
+    /* 1fr 1fr 1fr can be also written as repeat(3, auto); */
+    /* minmax(10px, 1fr) gives the value to be min of 10px and max of 1fr. It can be said that it sets a range of values for the property */
+    gap: 100px; /* Adds gap of 100px to each side. To add specifically in row or column use row-gap or column-gap */
+    justify-content: center;/* Adjusts the parent class on the main/x axis line. */
+    align-items: center;/* Adjusts the parent class on the cross/y axis line. */
+}
+.grid-child{
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+    border: 2px solid black;
+}
+.grid-child1{
+    background-color: red;
+    /* Looks simillar to flex properties */
+    justify-self: center;/* Align itself(child class) horizontally */
+    align-self: center;/* Align itself(child class) vertically */
+}
+.grid-child2{
+    background-color: yellow;
+}
+.grid-child3{
+    background-color: green;
+}
+
+.grid-parent-container-album{
+    display: grid;
+    height: 700px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 100px);
+}
+.grid-child-album{
+    /* height: 100px;
+    width: 100px; */
+}
+.grid-child-album1{
+    background-color: red;
+    grid-row-start: 1;/* Top margin is 1 then the margin below is 2 and so on */
+    grid-row-end: 3;/* Way to Merge Row-Wise */
+    /* When expanding rows, you would expect that the whole row moves down, but individual items move to their right and if they are on their right-most side they move down one to the left-most side */
+}
+.grid-child-album2{
+    background-color: green;
+}
+.grid-child-album3{
+    background-color: yellow;
+}
+.grid-child-album4{
+    background-color: pink;
+    grid-column-start: 2;/* Left margin is 1 then the margin right to it is 2 and so on */
+    grid-column-end: 4;/* Way to Merge Column-Wise */
+    /* When expanding columns, you would expect that the whole column moves right and create and additional row, but individual items move to their right and if they are on their right-most side they move down one to the left-most side */
+}
+.grid-child-album5{
+    background-color: brown;
+}
+.grid-child-album6{
+    background-color: purple;
+}
+.grid-child-album7{
+    background-color: violet;
+}
+.grid-child-album8{
+    background-color: yellowgreen;
+}
+.grid-child-album9{
+    background-color: magenta;
+}

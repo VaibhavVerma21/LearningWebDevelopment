@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template For 31 Jan</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        .container {
+            display: grid;
+            height: 420px;
+            grid-template-columns: 1fr 4fr;
+            grid-template-rows: 100px repeat(2, 1fr) 100px;
+        }
+        .header {
+            grid-column-start: 1;
+            grid-column-end: 3;
+            background-color: red;
+            border: 2px solid black;
+        }
+        .aside {
+            background-color: aqua;
+            grid-row-start: 2;
+            grid-row-end: 4;
+            border: 2px solid black;
+        }
+        .footer {
+            background-color: yellow;
+            border: 2px solid black;
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+        .article {
+            background-color: blue;
+            border: 2px solid black;
+            grid-column-start: 2;
+            grid-column-end: 3;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 1fr 1fr;
+        }
+        .article h1{
+            grid-column-start: 1;
+            grid-column-end: 4;
+        }
+        .image {
+            justify-self: center;
+            width: 350px;
+            height: 270px;
+            overflow: scroll;
+            background-color: white;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header"><h1>Header</h1></div>
+        <div class="aside"><h1>Aside</h1></div>
+        <div class="article">
+            <h1>Article</h1>
+            <div class="image image1"><img src="https://cdn.pwskills.com/user/profile_pictures/6294e0ab69607943313b8eac.jpg" alt=""></div>  
+            <div class="image image2"><img src="https://cdn.pwskills.com/user/profile_pictures/63a45203734f0638dd31c183.jpg" alt=""></div>  
+            <div class="image image3"><img src="https://cdn.pwskills.com/user/profile_pictures/HITESH%20CHOUDHARY.jpg" alt=""></div> 
+        </div>
+        <div class="footer"><h1>Footer</h1></div>
+    </div>
+</body>
+</html>
