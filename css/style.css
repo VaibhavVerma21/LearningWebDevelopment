@@ -689,3 +689,37 @@ body{
 .grid-child-album9{
     background-color: magenta;
 }
+
+
+/* DATE: 7 Feb 23 */
+
+.unit-div{
+    border: 5px solid red;
+}
+.unit-main{
+    border: 5px solid black;
+}
+.percentage{
+    width: 50%;
+    /* Makes it take 50 percent of width with respect to its parent class */
+}
+.vh-vw{
+    width: 50vw;
+    /* vw sets the 50 percent of the VIEW PORT WIDTH. So if view port width is 1080px then 50vw will be 540 */
+}
+/* vh-vw are different from percentage. Percentage sets percent of width/height with respect to its parent class while vh-vw sets percent of width/height with respect to the viewport width/height. that's why in vh-vw class you see the main coming out of div on the webpage. It is because they both are set to 50vw which means they have equal width. Due to 10px margin the gap is seen. */
+/* 100% can be 100% of the height of anything. For example, if I have a parent div that's 1000px tall, and a child div that is at 100% height, then that child div could theoretically be much taller than the height of the viewport, or much smaller than the height of the viewport, even though that div is set at 100% height. If I instead make that child div set at 100vh, then it'll only fill up 100% of the height of the viewport, and not necessarily the parent div. */
+/* Suppose you have a <div>, direct child of <body> that you want filling the whole viewport, so you use width: 100vw; height: 100vh;. It all works just the same as width: 100%; height: 100vh; until you add more content and a vertical scrollbar shows up. Since the vw account for the scrollbar as part of the viewport, width: 100vw; will be slightly bigger than width: 100%;. This little difference ends up adding a horizontal scrollbar (required for the user to see that little extra width) and by consequence, the height would also be a little different on both cases. */
+/* https://stackoverflow.com/questions/31039979/css-units-what-is-the-difference-between-vh-vw-and Check this link for examples for the above two explanation. */
+.em.unit-div{
+    font-size: 30px;
+}
+.em.unit-main{
+    font-size: 2em;/* em of property is equal to times of that property of parent. 2em in this case means 60px */
+}
+.rem.unit-div{
+    font-size: 30px;
+}
+.rem.unit-main{
+    font-size: 2rem;/* rem is called root(html/body) em. rem of a property is equal to times of that property of root. By default value of font of html/body(root) is 16px. So 2rem means 32px */
+}
