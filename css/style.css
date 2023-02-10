@@ -723,3 +723,34 @@ body{
 .rem.unit-main{
     font-size: 2rem;/* rem is called root(html/body) em. rem of a property is equal to times of that property of root. By default value of font of html/body(root) is 16px. So 2rem means 32px */
 }
+
+
+/* DATE: 8 Feb 23 */
+
+.container{
+    display: flex;
+}
+.box{
+    height: 350px;
+    width: 350px;
+    border: 2px solid black;
+    text-align: center;
+}
+.box1{
+    background-color: red;
+}
+.box3{
+    background-color: yellow;
+}
+@media screen and (max-width: 786px){
+    /* CSS in this block applies when width of screen is less than 786px */
+    .container{
+        flex-direction: column;
+        align-items: center;
+    }
+    .box{
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+    }
+}
