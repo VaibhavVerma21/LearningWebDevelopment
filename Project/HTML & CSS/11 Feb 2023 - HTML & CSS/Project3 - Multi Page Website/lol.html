@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hospital Page</title>
+
+    <style>
+        /* css reset */
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+body {
+  max-width: 1440px;
+  background-color: #f0f4f5;
+  overflow: hidden;
+  margin: auto;
+}
+
+/* designing the navigation menu */
+nav {
+  height: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+}
+
+/* designing the logo */
+nav img {
+  width: 150px;
+}
+
+/* desiging the navigation menu links */
+nav ul {
+  display: flex;
+  align-items: center;
+}
+
+nav ul li {
+  list-style: none;
+  margin-right: 50px;
+  font-weight: 600;
+}
+
+nav ul li:first-child {
+  font-weight: 700;
+  color: #20bc7e;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* designing the hero section */
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 85vh;
+}
+
+main section {
+  width: 50%;
+}
+
+.leftSection {
+  margin-left: 5%;
+  position: relative;
+}
+
+.topAngle {
+  width: 25px;
+}
+
+.leftSection h1 {
+  font-size: 70px;
+}
+
+.leftSection p {
+  color: #7c7c7c;
+  font-size: 18px;
+  margin: 20px 0;
+}
+
+.bottomAngle {
+  width: 25px;
+  position: absolute;
+  right: 25px;
+}
+
+.stethoscope {
+  position: absolute;
+  width: 90%;
+  top: -60px;
+  right: -25%;
+  z-index: -1;
+}
+
+.mouse {
+  position: absolute;
+  right: -30px;
+  bottom: 0;
+  width: 30px;
+}
+
+.leftSection button {
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 40px;
+  background-color: #20bc7e;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+/* designing the right section */
+.greenBox,
+.yellowBox {
+  position: absolute;
+  right: 0;
+}
+
+.greenBox {
+  width: 35%;
+  bottom: 30px;
+}
+
+.yellowBox {
+  width: 30%;
+  bottom: 50px;
+}
+
+.doctor {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 90%;
+}
+    </style>
+
+    <!-- adding the google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;400;500;600;700&family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- adding the css file -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <!-- creating the navigation menu -->
+    <nav>
+      <img src="./images/logo.png" alt="logo" />
+      <a href="/"></a>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="./about/about.html">About Us</a></li>
+        <li><a href="./contact/contact.html">Contact us</a></li>
+      </ul>
+    </nav>
+
+    <!-- creating the hero section -->
+    <main>
+      <!-- creating the left section -->
+      <section class="leftSection">
+        <img class="topAngle" src="./images/topAngle.png" alt="topAngle" />
+        <h1>Complete Health Care Solutions for Everyone</h1>
+        <p>
+          We're always available for our Patients with emergen problems. You can
+          easily reach us 24/7. We focused on highest quality.
+        </p>
+        <img
+          class="bottomAngle"
+          src="./images/bottomAngle.png"
+          alt="bottomAngle"
+        />
+        <img
+          class="stethoscope"
+          src="./images/stethoscope.png"
+          alt="stethoscope"
+        />
+        <button>Make Appointment</button>
+        <img class="mouse" src="./images/mouse.png" alt="mouse" />
+      </section>
+
+      <!-- creating the right section -->
+      <section class="rightSection">
+        <img class="greenBox" src="./images/greenBox.png" alt="greenBox" />
+        <img class="yellowBox" src="./images/yellowBox.png" alt="yellowBox" />
+        <img class="doctor" src="./images/doctor.png" alt="doctor" />
+      </section>
+    </main>
+  </body>
+</html>
