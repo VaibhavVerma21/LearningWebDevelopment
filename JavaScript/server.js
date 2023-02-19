@@ -53,3 +53,57 @@
     let not = !false; // Not Operator
 }
 // Finished Video 13 Feb 2023
+
+
+// Started Video 14 Feb 2023
+{
+    // If else if ladder
+    let signal = "yellow";
+    if(signal=="red")
+        console.log("Red => Stop");
+    else if(signal=="yellow")
+        console.log("Yellow => Go Slow");
+    else if(signal=="green")
+        console.log("Green => Go Fast");
+    else
+        console.log("Invalid signal");
+
+    // Ternary Operator
+    console.log(false?true:false);
+
+    // Switch Case
+    let user = "admin";
+    switch(user){
+        case "admin":
+            console.log("Admin");
+            break;
+        case "vaibhav":
+            console.log("Vaibhav Verma");
+            break;
+        case "user":
+            console.log("User");
+            break;
+        default:
+            console.log("Guest");
+    }
+    
+    // For Loop
+    for(let i=0; i<5;i++){
+        console.log(i);
+    }
+
+    // While Loop
+    let while_ = 0;
+    while(while_ < 5){
+        console.log(while_);
+        while_++;
+    }
+
+    // Do While Loop
+    let do_ = 0;
+    do{ // Execute Loop atleast once
+        console.log(do_);
+        do_++;
+    } while(do_ == 0)
+}
+// Finished Video 14 Feb 2023
