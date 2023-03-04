@@ -3,8 +3,8 @@
     // This is a comment
 
     // Normal Print Statment
-    console.log("Vaibhav Verma"); 
-    console.log(this)
+    // console.log("Vaibhav Verma"); 
+    // console.log(this)
 
     // Data Types
     let name = "Vaibhav Verma"; // String Value
@@ -25,9 +25,9 @@
 
     // Printing variables
     let cost = 3500;
-    console.log(cost);
+    // console.log(cost);
     cost = 2000;
-    console.log(cost);
+    // console.log(cost);
 
     // Operators
     let assignment = 1; // Assignment Operator
@@ -60,49 +60,53 @@
     // If else if ladder
     let signal = "yellow";
     if(signal=="red")
-        console.log("Red => Stop");
+        // console.log("Red => Stop");
+        null;
     else if(signal=="yellow")
-        console.log("Yellow => Go Slow");
+        // console.log("Yellow => Go Slow");
+        null;
     else if(signal=="green")
-        console.log("Green => Go Fast");
+        // console.log("Green => Go Fast");
+        null;
     else
-        console.log("Invalid signal");
+        // console.log("Invalid signal");
+        null;
 
     // Ternary Operator
-    console.log(false?true:false);
+    // console.log(false?true:false);
 
     // Switch Case
     let user = "admin";
     switch(user){
         case "admin":
-            console.log("Admin");
+            // console.log("Admin");
             break;
         case "vaibhav":
-            console.log("Vaibhav Verma");
+            // console.log("Vaibhav Verma");
             break;
         case "user":
-            console.log("User");
+            // console.log("User");
             break;
         default:
-            console.log("Guest");
+            // console.log("Guest");
     }
     
     // For Loop
     for(let i=0; i<5;i++){
-        console.log(i);
+        // console.log(i);
     }
 
     // While Loop
     let while_ = 0;
     while(while_ < 5){
-        console.log(while_);
+        // console.log(while_);
         while_++;
     }
 
     // Do While Loop
     let do_ = 0;
     do{ // Execute Loop atleast once
-        console.log(do_);
+        // console.log(do_);
         do_++;
     } while(do_ == 0)
 }
