@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - 27 Feb 2023</title>
+</head>
+<body>
+    <h1>Selecting and Editing Elements</h1>
+    <!-- Id -->
+    <p id="id"><span>Hello</span> Namaste</p>
+    <!-- Class -->
+    <ul>
+        <li class="class">One</li>
+        <li class="class">Two</li>
+        <li class="class">Three</li>
+    </ul>
+    <!-- Tag Name -->
+    <h5>Hey</h5>
+    <h5>Namaste</h5>
+    <h5>Hola</h5>
+    <!-- Query Selector -->
+    <h4 id="querySelector-id">ID</h4>
+    <h4 class="querySelector-class">Class</h4>
+    <script>
+            function DOM_1(){
+                // Id
+                let id = document.getElementById("id"); // Finds element with id which is passed to it.
+                console.log(id); // Output -> <p id="id"><span>Hello</span> Namaste</p>
+                console.log(id.innerHTML); // Extracts inner content with HTML. Output -> <span>Hello</span> Namaste
+                console.log(id.innerText); //Extracts inner content without HTML i.e. only the text which is visible. Output -> Hello Namaste
+            
+                // Class
+                let class_ = document.getElementsByClassName("class"); // Finds elements with class which is passed to it.
+                console.log(class_); // Output -> Array with collection of elements whose class name is "class".
+                console.log(class_[2].innerText); // Output -> Three
+                class_[1].innerHTML = "Vaibhav"; // Sets 2nd element which has class name "class" as "Vaibhav".
+
+                // Tag Name
+                let tag = document.getElementsByTagName("h5");
+                console.log(tag[1].innerText); // Output -> Namaste
+                tag[2].innerText = "I'm Red"; // Sets inner text of 3rd element in the array of h5 tag elements to "I'm Red".
+                tag[2].style.color = "red"; // Sets color style of 3rd element in the array of h5 tag elements to "red".
+
+                // Query Selector
+                var querySelector = document.querySelector(".querySelector-class") // Selects element using . and # for class and id respectively.
+                console.log(querySelector);
+                querySelector.className = "querySelector-class-new"; // Sets the class name for the selected element.
+                querySelector.classList = "querySelector-class querySelector-class-new"; // Sets multiple class names for the selected element.
+                querySelector.setAttribute("title", "Vaibhav") // Sets a new attribute and a value for it for the selected element.
+            }
+            DOM_1();
+    </script>
+    
+    <hr>
+
+    <h1>Adding and Removing Elements</h1>
+    <div id="title-place"></div>
+    <ul id="delete">
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+    </ul>
+    <script>
+        function DOM_2(){
+            // Append/Add Elements
+            let title = document.createElement("h1"); // Creates a h1 element.
+            title.className = "title"; // Gives class name "title".
+            title.style.fontSize = "50px"; // Sets font size to 50px.
+            title.textContent = "This is Title"; // Sets content of h1 to "This is Title".
+            console.log(title); // Output -> <h1 class="title" style="font-size: 50px;">This is Title</h1>
+            let div = document.getElementById("title-place");
+            div.appendChild(title); // Adds it into the the div.
+
+            // Delete/Remove Elements
+            let ul = document.querySelector("#delete"); // Selects element by tag name.
+            let li = document.querySelectorAll("#delete>li"); // Selects mutliple elements by tag name.
+            for(list of li){
+                ul.removeChild(list); // Removes the child of ul which here is li.
+            }
+        }
+        DOM_2();
+    </script>
+
+    <hr>
+
+    <h1>Events</h1>
+    <h3 id="click">Click On Screen</h3>
+    <button onclick="clicked()" id="click-button">Click Me</button> <!-- Just add 'on' in the begginning of any event and then it can be used just like event listener. For Example: on'event' = "function call" -->
+    <script>
+        document.body.addEventListener("click", Hello); // Listens to a particular event and calls the function passed in second argument. click, dbclick, mouseenter are some of the examples of events.
+        function Hello(){
+            document.getElementById("click").innerText = "Hi"; 
+        }
+        function clicked(){
+            let button = document.getElementById("click-button");
+            button.textContent = "Clicked";
+            button.style.color = "white";
+            button.style.backgroundColor = "#1e1e21";
+            button.style.padding = "10px 30px";
+            button.style.borderRadius = "10px";
+        }
+    </script>
+
+    <hr>
+</body>
+</html>
