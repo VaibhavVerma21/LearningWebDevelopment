@@ -445,3 +445,136 @@
 
 }
 // Finished Video 6 Mar 2023
+
+
+// Started Video 13 Mar 2023
+{
+    // Spread and Rest
+    // '...' is spread as well as rest operator but depends on it implementation
+
+    
+
+
+    // Spread Operator Use Case Scenario
+
+    const firstArray = [1,2,3,4];
+    const secondArray = [5,6,7,8];
+
+    let threeArray = [firstArray, secondArray]; // Puts the parameters passed as individual element into an array. 
+    // console.log(threeArray); // Output -> [ [ 1, 2, 3, 4 ], [ 5, 6, 7, 8 ] ]
+
+    threeArray = firstArray.concat(secondArray); // Below statement does the same job
+    threeArray = [...firstArray, ...secondArray]; // '...' Brings out the elmenet from the array
+    // console.log(threeArray); // Output -> [1, 2, 3, 4, 5, 6, 7, 8]
+
+    let arr1 = [3, 5, 8];
+    let obj1 = { ...arr1 }; // Puts element of array into an object
+    // console.log(obj1); // Output -> { '0': 3, '1': 5, '2': 8 }
+    
+    let obj2 = {
+    name: "Harry",
+    company: "Company xyz",
+    address: "XYZ"
+    };
+    // console.log({ ...obj2, name: "John", company: "ABC" }); // This will bring value from obj2 but overwrite them with the new values
+    // console.log({ name: "John", company: "ABC", ...obj2 }); // This will print the obj2 object without overwriting any values
+
+
+
+
+    // Rest Operator Use Case Scenario
+
+    (() => {
+        let args = Array.from(arguments); // Converts an iterateable object to an array
+        args = args.map(e => e*2); // Doubles each number got from the arguments in the array
+        // console.log(args); // Output -> [2, 4, 6]
+    })(1,2,3);
+
+    ((...args) => { // Converts individual arguments into a single array
+        args = args.map(e => e * 3); // Triples each number got from the arguments in the array
+        // console.log(args); // Output -> [ 3, 6, 9 ]
+    })(1,2,3);
+    
+
+
+
+    // Examples
+
+    const names = ["superman", "flash"];
+    const newNames = ["Batman", ...names, "thor"]; // Spread
+    // console.log(newNames); // Output -> [ 'Batman', 'superman', 'flash', 'thor' ]
+
+    const sitename = "pwskills"; // Spread
+    // console.log([...sitename]); // Output -> ['p', 'w', 's', 'k', 'i', 'l', 'l', 's']
+
+    ((...values) => { // Rest
+        // console.log(values); // Output -> [ 'superman', 'flash' ]
+    })("superman", "flash");
+
+}
+{
+    // Destructuring
+
+    let arr = [3, 5, 8, 9, 12, 14];
+    // No need to do this:
+    let a__ = arr[0];
+    let b__ = arr[1];
+
+    let [a_, b_] = arr; // Grabs first and second element and store into a_ and b_
+    // console.log(aa, bb); // Output -> 3 5
+
+    let [a, b, c, d, ...rest] = arr; // Grabs first, second, third, forth and stores in a, b, c, d and rest of them in variable rest
+    // console.log(a, b, c, d, rest); // Output -> 3 5 8 9 [ 12, 14 ]
+
+    let [aa, , bb, ...rest_] = arr; // Stores first, second, third in aa, nothing, bb and rest of them in variable rest_. Comma with no variable after it means that the corresponding value will not be stored.
+    // console.log(aa, bb, rest_); // Output -> 3 8 [ 9, 12, 14 ]
+
+    let { aaa, bbb } = { aaa: 1, bbbb: 5 }; // Stores value of key in its corresponding variable with same name as the key
+    // console.log(aaa, bbb) // Output -> 1 undefined 
+
+    let { aaa_, bbb_="Default_Value" } = { aaa_: 1, bbbb_: 5 }; // Default value can be assigned in case if the variable may be undefined.
+    // console.log(aaa_, bbb_) // Output -> 1 Default_Value 
+
+}
+{
+    // Sets
+
+    let emptySet = new Set(); // Stores unique values of any data type
+    // console.log(emptySet.size); // Output -> 0
+
+    let myArray = [1,2,3,4];
+    let newSet = new Set(myArray);
+    // console.log(newSet); // Output -> Set(4) { 1, 2, 3, 4 }
+
+    newSet.add(2); // Doesn't add because 2 was already in the set, set stores unique values
+    newSet.add(9); // Adds 9 to the set
+    // console.log(newSet); // Output -> Set(5) { 1, 2, 3, 4, 9 }
+    // console.log(newSet.has(4)); // Output -> true
+
+    newSet.clear(); // Clears the set
+    // console.log(newSet); // Output -> Set(0) {}
+
+    let set1 = new Set([1,2,3,4,5]);
+    let set2 = new Set([5,6,7,8,9]);
+    let intersection = new Set([...set1].filter(element => set2.has(element)));
+    // console.log(intersection); // Output -> Set(1) { 5 }
+
+}
+{
+    // Maps
+
+    let map = new Map();
+    // console.log(map.size); // Output -> 0
+
+    let arr=[
+        [1, "Mithun"],
+        [2, "Alka"],
+        [3, "Prabir"],
+        [4, "Shivam"],
+        [5, "Vinay"]
+    ];
+    arr.map(element => map.set(element[0], element[1]));
+    // console.log(map); // Output -> Map(5) {1 => 'Mithun', 2 => 'Alka', 3 => 'Prabir', 4 => 'Shivam', 5 => 'Vinay'}
+
+}
+// Finished Video 13 Mar 2023
