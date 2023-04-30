@@ -578,3 +578,332 @@
 
 }
 // Finished Video 13 Mar 2023
+
+
+// Started Video 20 Mar 2023
+{
+    // Try, Catch and Finally.
+    try{
+        let x = undefined;
+        console.log(x[0]); // TyperError
+    } catch(error) {
+        // This block of code gets executed when there is an error in try block.
+        // console.log("Error is: ", error);
+    } finally {
+        // This block of code always gets executed after try and catch.
+        // console.log("This always gets exectued");
+    }
+    // console.log("End");
+
+}
+{
+    // Class and its Instaniation
+    class Student{
+        // Properties -> Variables -> Data Members
+        name;
+        class; // No need of keyword let, var or const
+        age;
+
+        // Behaviours -> Functions -> Member Functions
+        display(){
+            // No need of keyword function
+            console.log("Called Display Function");
+        }
+    }
+    let obj = new Student();
+    // console.log(obj); // Output -> Student { name: undefined, class: undefined, age: undefined }
+    // obj.display(); // Output -> Called Display Function 
+
+}
+{
+    // Class Constructors
+    class Product{
+        constructor(name, price, rating){ // This function will always be called when a new object is created.
+            this.name = name; 
+            this.price = price;
+            this.rating = rating;
+            // 'this' refers to the object that called the function(calling context)
+            
+            return this;
+            return 10; // Doesn't return primitive data types. Current object (aka 'this') is returned and ends the constructor.
+            return {x:4, y:2}; // Can return objects. This object will be returned to obj variable. Output of log(obj) will be { x: 4, y: 2 }
+        }
+        
+        // constructor(){ // Multiple constructor not allowed }
+        
+        display(){
+            console.log("'This' refers to:", this, "Name:", this.name, "Price:", this.price, "Rating:", this.rating); 
+            // 'this' refers to the object that called the function(calling context)
+        }
+    }
+    let obj = new Product("iPhone", 100000, 5); // new -> creates an empty plain object
+    // console.log(obj); // Output -> Product { name: 'iPhone', price: 100000, rating: 5 }
+    // console.log(obj.name); // Output -> iPhone
+    // obj.display(); // Output -> 'This' refers to: Product { name: 'iPhone', price: 100000, rating: 5 } Name: iPhone Price: 100000 Rating: 5
+    
+    
+    
+    // Functional Constructors
+    function Product_(name, price, rating){
+        this.name = name;
+        this.price = price;
+        this.rating = rating;
+    }
+    Product_.prototype.sampleFunction = function() {
+        console.log("Function constructor's member function is called.");
+        // To declare a member function in a functional constructor, use prototype.
+    }
+    let obj_ = new Product_("MacBook", 150000, 5); // The function will only be regarded as functional constructor, when new keyword is used during the declaration and initialization of the object.
+    // console.log(obj_); // Output -> Product_ { name: 'MacBook', price: 150000, rating: 5 }
+    // obj_.sampleFunction(); // Output -> Function constructor's member function is called.
+    
+
+
+    let x = {func: Product_};
+    // console.log(x); // Output -> { func: [Function: Product_] }
+    x.func("iPods", 8000, 5);
+    // console.log(x); // Output -> { func: [Function: Product_], name: 'iPods', price: 8000, rating: 5 }
+    
+    
+    
+    let Product__ = function(name, price, rating) {
+        this.name = name;
+        this.price = price;
+        this.rating = rating;
+    }
+    let obj__ = new Product__("MacBook", 150000, 5);
+    // console.log(obj__); // Output -> Product__ { name: 'MacBook', price: 150000, rating: 5 }
+    // Same thing with function expression and anonymous function expression
+
+
+    let object = {
+        x: 10,
+        fun() {
+            console.log(this.x);
+        }
+    }
+    // object.fun() // Output -> 10
+    
+    
+    
+    // SPECIAL CASE: Arrow functional constructors
+    let Product___ = (name, price, rating) => {
+        this.name = name;
+        this.price = price;
+        this.rating = rating;
+    }
+    // let obj___ = new Product___("MacBook", 150000, 5); // Constructors can not be made from Arrow functions. Will throw a TypeError.
+
+
+
+    // IMPORTANT: IN ARROW FUNCTIONS, 'THIS' VALUE DOESN'T REFER TO THE CALLING CONTEXT BUT TO THE 'THIS' OF THE PARENT SCOPE OR THE 'THIS' OUTSIDE THE FUNCTION.
+
+    let object_ = {
+        x:10,
+        func: () => {
+            console.log(this.x); 
+            // In this case the 'this' outside the arrow function is the window or the global this. And the window doesn't have a variable 'x'
+        }
+    }
+    // object_.func(); // Output -> undefined
+
+
+    let object__ = {
+        x:10,
+            func() {
+                console.log(this, "Outside the arrow function");
+                y = {
+                    gun: () => {
+                        console.log(this, "Inside the Arrow Function");
+                        // In this case the 'this' outside the arrow function is the 'this' refering to the calling context which is 'object__'
+                        // Object 'y' doesn't have a 'this' but function 'func' has a 'this' refering to the calling context which is 'object__'
+
+                        console.log(this.x); // The 'x' of the 'this' is the 'x' of calling context which is 10.
+                    }
+                }
+                y.gun();
+            }
+    }
+    // object__.func(); // Output -> 10
+
+}
+{
+    // Private members and static members
+    class Product{
+        #rating; // To create a private variable it MUST be declared and an # must be at the starting of the variable name.
+
+        constructor(name, price, rating){
+            this.name = name; 
+            this.price = price;
+            this.#rating = rating; // # must be added wherever the private variable has to be accessed
+        }
+
+        static custom(){
+            // Static Function
+            // They are class properties
+            console.log("Calling a Static Function");
+        }
+
+        display(){
+            console.log("This refers to:", this, "Name:", this.name, "Price:", this.price, "Rating:", this.#rating);
+        }
+    }
+    let obj = new Product("iPhone", 100000, 5);
+    // console.log(obj); // As the variable is set to private, it is not returned in this.
+    // console.log(obj.rating); // Can't access private variable outside class. Also can not overwrite it outisde the class. Output -> undefined
+
+    // obj.custom(); // Throws TyperError, wrong way to call them, they are class properties
+    // Product.custom(); // Right way to call static functions -> <Class_Name>.<Function_Name>();
+
+    obj.name = "Samsung S23"; // Other non-private data members can be edited outside the class.
+    // console.log(obj.name); // Output -> Samsung S23
+
+    // obj.display();  // Output -> This refers to: Product { name: 'Samsung S23', price: 100000 } Name: Samsung S23 Price: 100000 Rating: 5
+    // Only through display function, the private variable is revealed. The display function can access the private variable as it is inside the class where the private vaiables are accessible.
+    
+}
+{
+    // Getters and Setters
+    class Product{
+        #rating;
+
+        constructor(name, price, rating){
+            this.name = name; 
+            this.price = price;
+            this.#rating = rating;
+        }
+
+        getRating_(){
+            console.log(this.#rating);
+        }
+        setRating_(rating){
+            if(rating<0) return;
+            this.#rating = rating;
+        }
+
+
+        get getRating(){ // JavaScript Setter
+            console.log(this.#rating);
+        }
+        set setRating(rating){ // JavaScript Setter
+            if(rating<0) return;
+            this.#rating = rating;
+        }
+
+    }
+    let obj = new Product("iPhone", 100000, 5);
+
+    // obj.getRating_(); // Output -> 5
+    obj.setRating_(10);
+    // obj.getRating_(); // Output -> 10
+
+    // Gets and Sets value of the rating from JavaScript in-built getter and setter.
+    // obj.getRating; // Output -> 10
+    obj.setRating = 20;
+    // obj.getRating; // Output -> 20
+
+
+
+
+    // Example for getter and setter
+    class ComplexNumber{
+        #real;
+        #imag;
+        constructor(real,imag) {
+            this.#real = real;
+            this.#imag = imag;
+        }
+        get real(){return this.#real;}
+        get imag(){return this.#imag;}
+        display() {
+            console.log(this.#real+" + i"+this.#imag);
+        }
+        addComplexNumber(c){
+            c1.#real += c.real;
+            c1.#imag += c.imag;
+        }
+    }
+    let c1 = new ComplexNumber(2,3);
+    // c1.display(); // Output -> 2 + i3
+    let c2 = new ComplexNumber(4,5);
+    // c2.display(); // Output -> 4 + i5
+    c1.addComplexNumber(c2);
+    // c1.display(); // Output -> 6 + i8
+
+}
+{
+    // Prototypes and Inheritence
+
+
+
+    // Prototypes
+
+    // Everything in JavaScript is object. If any property or behavior is injected in object using prototype, it will be automatically injected in array, object, string, etc as they have just inherited some properties and behavior from object. And as now we have added a new property or behavior to object, then it will also be available in array, object, string, etc.
+
+    let myHeros = ["Thor", "Spiderman"];
+    let dcHeros = ["batman", "flash", "superman"];
+
+    let heropower ={
+        thor: "hammers",
+        spiderman: "sling",
+
+        getSpidermanPower: function(){
+            console.log(`Spidy power is ${this.spiderman}.`);
+        }
+    }
+    // heropower.getSpidermanPower(); // Output -> Spidy power is sling.
+
+    Object.prototype.vaibhav = function(){
+        console.log("Vaibhav is all object.");
+    }
+    // heropower.vaibhav(); // Output -> Vaibhav is all object.
+    // Injected a user made function into objects.
+
+    // myHeros.vaibhav(); // Output -> Vaibhav is all object.
+    // Since we have injected this function in object and array are made up from objects, therefore we can access the function from the array.
+
+
+    Array.prototype.vaibhavTwo = function() {
+        console.log("Vaibhav in all arrays.");
+    }
+    // myHeros.vaibhavTwo(); // Output -> Vaibhav in all arrays.
+    // heropower.vaibhavTwo(); // Output -> TyperError
+    // Since the vaibhavTwo function was injected for array, we get error if try to call the function from object as it is not declared there.
+
+
+    
+
+    // Inheritance
+    let User = {
+        name: "Top Name",
+        email: "top@gmail.com"
+    }
+    let Teacher = {
+        makeVideos: true
+    }
+    let TeachingSupport = {
+        isAvailable: false
+    }
+    let TAAssistant = {
+        makeAssignment: "Js Assignment",
+        fulltime: true,
+        __proto__: TeachingSupport // Inheriting TeachingSupport object to TAAssistant object.
+    }
+    TAAssistant.__proto__ = TeachingSupport; // Same way to do above statement but outside the object.
+    // console.log(TAAssistant.isAvailable); // Output -> false
+    
+    Object.setPrototypeOf(Teacher, User); // Morden and better way to inherite second argument object to first argument object.
+    // console.log(Teacher.name); // Output -> Top Name
+
+
+
+
+    // Example for prototype implementation
+    String.prototype.realLength = function(){
+        return this.trim().length;
+    }
+    // console.log("Vaibhav        ".realLength()); // Output -> 7
+    // console.log("Vaibhav".realLength()); // Output -> 7
+
+}
+// Finished Video 20 Mar 2023
