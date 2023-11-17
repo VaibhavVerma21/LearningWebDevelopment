@@ -907,3 +907,163 @@
 
 }
 // Finished Video 20 Mar 2023
+
+
+// Started Video 27 Mar 2023
+{
+    // Callbacks
+
+    // The function which is sent to a higher order function as an argument is known as callback.
+    function exec(square){
+        console.log(`Squared value is ${square}`);
+    }
+    function squarerAndPasser(number, func){
+        func(number*number);
+    }
+    // squarerAndPasser(10, exec); // Output -> 100
+
+    function callback(){
+        console.log("Start");
+        setTimeout(()=>{
+            console.log("Timer Done");
+        }, 3000)
+        // for(let i=0; i<10000000000; i++);
+        console.log("End");
+        // First Start is printed then End is printed then Timer Done is printed because set timeout is a asynchronous piece of code and doesn't block normal function of code. If same is done using for loops, it will pause the execution as its a synchronous code. 
+        // setTimeout tells nodejs/runtime to execute a callback once the timer has run out and then nodejs/runtime proceeds to execute the next line of code.
+        // Even if the timer is for 0 seconds, if the for loop is being executed then it will not be interrupted and Timer Done will be printed once the for loop execution has finished.
+
+    }
+    // callback();
+}
+{
+    // Promises
+
+    function promises() {
+        function createPromise() {
+            return new Promise(function executor(resolve, reject) {
+                // The 2 parameters resolve and reject are callbacks. The function that are passed to them are used to update the promise status. The name can be also for example res and rej. It can be any other name, but then those will do their tasks respectively. Like the first one will update promise to 'fulfilled' and the second will update promise to 'rejected'.
+                setTimeout(function() {
+                    resolve("Accepted"); // Output -> Then Block, Value: Accepted
+                    reject("Declined"); //  Output -> Catch Block, Value: Declined
+                    // Only the first resolve or reject is considered as promise is updated from 'pending' to 'fulfilled' or 'rejected' and once updated can not be undone.
+                    console.log("3 Sec timer done");
+                    // The reason resolve or reject doesn't end the execution of code after it is because a function ends when function has no further line or has reached a return statement. So to make it work like that we must use return resolve("Accepted").
+                }, 3000);
+                // Value during promise being 'pending' is undefined
+            });
+        }
+
+        console.log("Start");
+        let x = createPromise();
+        console.log("Got Promise");
+
+        x.then(function(value) {
+            // This block of code gets executed when Promise is moved from 'pending' to 'fulfilled'. This is done using resolve keyword. The value that is passed in resolve can be accepted as a parameter for a callback in the 'then' part.
+            console.log("Then Block, Value:", value); // Output -> Then Block, Value: Accepted
+        }).catch(function(value) {
+            // This block of code gets executed when Promise is moved from 'pending' to 'rejected'. This is done using rejeced keyword. The value that is passed in rejected can be accepted as a parameter for a callback in the 'then' part.
+            console.log("Catch Block, Value:", value); // Output -> Catch Block, Value: Declined
+        }).finally(function() {
+            // Always(Either resolve or rejected has to be called) executed. Like try and catch statements.
+            console.log("Finally Block");
+        });
+        // Key Point: x.then() also returns a Promise therefore we can do x.then().then() i.e. putting a .then() on x.then()
+
+        console.log("End");
+    }
+    // promises(); 
+    /* Output -> 
+        Start
+        Got Promise
+        End
+        3 Sec timer done
+        Then Block, Value: Accepted
+        Finally Block
+    */
+}
+{
+    // Async, Await and Fetch
+
+    function async() {
+        function consume_normal() {
+            return 10;
+        }
+        async function consume_async() {
+            return 10;
+        }
+        console.log(consume_normal()); // Output -> 10
+        console.log(consume_async()); // Output -> Promise {10}
+        // This shows that async functions return a Promise with the return value inside it.
+    }
+    // async();
+
+    function await() {
+        function createPromise_accept() {
+            return new Promise(function executor(resolve, reject) {
+                setTimeout(function() {
+                    resolve(5);
+                    console.log("5 Sec timer done");
+                }, 5000);
+            });
+        }
+        function createPromise_reject() {
+            return new Promise(function executor(resolve, reject) {
+                setTimeout(function() {
+                    reject("Error from rejecting the promise. This message is from inside the reject keyword.");
+                    console.log("5 Sec timer done");
+                }, 5000);
+            });
+        }
+
+        async function consume() {
+            console.log("Message from inside the function.");
+            const response = await createPromise_accept();
+            // When an await is hit in the async function then the main execution goes back to where it was called. As soon as the promise is done i.e. updated from 'pending' to 'fulfilled' AND the main execution current task is done THEN it returns to the line where await was called and continues. Inside an async function code is executed line by line.
+            const response1 = createPromise_accept();
+            // If await is not used in an async function then it works as a normal and doesn't wait for the promise to be 'fulfilled', doesn't stop execution and moves on to the next line, unlike when await is used in an async function.
+            console.log("Response is " + response);
+            // The value passed in resolve(value) can be recieved from storing the promise to a variable. If the promise is 'pending' at the time of initialization of the variable then it will have the promise object and if it is 'fulfilled' at the time of initialization then it will have the value that was passed from resolve
+            console.log("Response1 is " + response1);
+
+            try{
+                const promise = await createPromise_reject();
+                // If a promise can be rejected then try and catch should be used to handle the rejection.
+            } catch(err){
+                // The value passed from reject keyword is captured in err as an parameter.
+                console.log("Error got from the reject keyword:", err);
+            }
+        }
+        
+        console.log("Start");
+        consume();
+        console.log("End");
+    }
+    // await();
+    /* Output ->
+        Start
+        Message from inside the function.
+        End
+        5 Sec timer done
+        Response is 5
+        Response1 is [object Promise]
+        5 Sec timer done
+        5 Sec timer done
+        Error got from the reject keyword:  Error from rejecting the promise
+    */
+
+    async function fetching() {
+        fetch("http://type.fit/api/quotes")
+        .then(function(response) {
+            return response.json();
+        }).then(function(value) {
+            // .json() function returns a promise. Therefore, .then() is used to handle the promise.
+            console.log(value);
+        });
+        
+        const response = await fetch("http://type.fit/api/quotes")
+        console.log(await response.json()); // .json() function returns a promise.
+    }
+    // fetching();
+}
+// Finished Video 27 Mar 2023
