@@ -1,0 +1,15 @@
+TCP/IP Model Layers -
+1. Application Layer -> App, through which user interactes.
+2. Transport Layer -> TCP protocal exists here, reliable TCP connection
+3. Network/Internet Layer -> Decides how routing of data packets is to be handled
+4. Link Layer -> Prepares data from network layer and sends it to physics layer i.e. how the signals will be transferred through something like optic fiber or copper wires(basically the one's and zero's)
+5. Physical Layer -> Components through which electic or light signals travel like copper wire, optic fiber
+
+OSI Model Layers -
+1. Application Layer -> App, through which user interactes.
+2. Presentation Layer -> It helps in encoding, data compression, stuff to polish the data that is being transmitted 
+3. Session Layer -> Stores the Session and authentication related information like cookies
+4. Transport Layer -> TCP protocal exists here, reliable TCP connection
+5. Network/Internet Layer -> Decides how routing of data packets is to be handled
+6. Link Layer -> Prepares data from network layer and sends it to physics layer i.e. how the signals will be transferred through something like optic fiber or copper wires(basically the one's and zero's)
+7. Physical Layer -> Components through which electic or light signals travel like copper wire, optic fiber

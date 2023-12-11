@@ -1,0 +1,30 @@
+pwd -> PrintWorkingDirectory -> Current Working Directory
+clear -> clear console(retains history of commands)
+
+ls -> list files in current working directory
+ls -a -> list files in current working directory, even the ones that are hidden
+ls -lh -> list files in current working directory with file size or more details
+
+cd -> change directory 
+mkdir -> make directory
+rmdir -> delete directory(only works when directory is empty)
+
+touch file.ext -> creates a file with name 'file' and extension 'ext'
+
+rm -rf folder -> goes inside directory, recursively deletes all files and deletes the main directory
+
+vim file.txt -> vim editor
+Can't immediately start editing, first need to go to insert mode by pressing 'i' 
+press esc when done and type ':wq' for write(save) and quit
+':wq!' to not write(save) and just exit
+
+cat file.txt -> to output content of file.txt
+
+open s1 -> to open s1 folder with default software
+
+
+man command_name -> to get help for that command
+
+
+cp -> to copy file and save it with another name
+mov -> to move file or save it with another name

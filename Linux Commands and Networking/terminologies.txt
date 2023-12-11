@@ -1,0 +1,1 @@
+Cache -> Mechansim to store frequently accessed data. For example, if something has to be accessed from database multiple times then it can be stored on server so there is no need to access the data from the database again and again.
