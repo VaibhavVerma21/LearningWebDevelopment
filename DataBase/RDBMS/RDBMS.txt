@@ -1,0 +1,10 @@
+Relational Database Management System
+
+
+Relationship Data Model -> 
+1 to 1 relationship
+1 to Many relationship
+Many to 1 relationship
+Many to Many relationship
+
+

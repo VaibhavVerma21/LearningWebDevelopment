@@ -1,0 +1,21 @@
+In RDBMS, data is stored in table form.
+
+Keys are combinations of one column or multiple columns of a table to identify each row uniquely.
+Example: 
+For Employee, keys will be - 
+Emp_ID
+Emp_Name
+Pan_Num
+Aadhar_num
+
+
+Super key -> It is a collection of set of all possible combinations of keys. Like super set in set theory. Not very use in real life.
+Candidate key -> Subset of Super key. It is a single key or a group of multiple keys that uniquely identify rows in a table.
+Primary key -> It is one of the candidate keys. Example: The ID column could be a primary key. It is unique for each table.
+Alternate key -> All candidate keys except the primary key are alternate keys.
+
+Foreign key -> It is used to make relationships between tables. The key which is used to make the relationship is called Foreign Key Column. Example: Departement_ID will be found in both Employee table and Departement table. It also provides data integrity by double checking data in both tables.
+
+Composite key -> It is used when primary key can not be formed by only using a single column, it is called composite primary key. If it is not declared primary key, it is called as composite key.
+
+Artificial key -> When no primary key is possible, or composite primary key is too long, then we add a new column(Example: ID) which will be unique and can be used as primary key.

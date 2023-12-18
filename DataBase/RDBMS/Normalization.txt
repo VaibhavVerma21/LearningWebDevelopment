@@ -1,0 +1,50 @@
+In RDBMS, we make multiple tables to store multiple kinds of data and link them together i.e. SRP(Single Responsibility Principle)
+This is because if wanted to update/delete one data from a row, we might also update/delete other data from that row which we didn't wanted to update/delete. This is called update/deletion anamoly.
+If wanted to create a new row, but we only have some data and not all, then we will not be able to successfully create that new row. This is called as insertion/creation anamoly.
+
+Normalization -> 
+This is why need to make the database normal i.e. Normalization.
+It objective is to reduce redundancy.
+
+
+
+
+
+1. First Normal Form (1NF) ->
+Should have a Primary Key or Composite Primary Key
+Should have only one value in each cell
+
+Key points: 1NF deals with atomicity and ensures that each column in a table contains only indivisible (atomic) values. No multi-valued or composite attributes are allowed in a single column.
+Example: Imagine a table called "Students" where you have a column for "Phone Numbers" that stores multiple phone numbers in a single cell. To achieve 1NF, you'd separate these phone numbers into different rows, each containing a single phone number for a student.
+
+
+
+
+2. Second Normal Form (2NF) ->
+Should be 1NF
+A database in which primary key is not composite i.e. only one value in the row is primary key then it is automatically 2NF.
+There should be no partial dependencies i.e. every data in the row should dependend on the entire primary key, not just part of it.
+If it does not, we split the database into tables in a way that all data in row depends on the primary key(the primary key on which data was dependent on will only be in that table, the rest of the composite primary key will be absent).
+
+Key points: 2NF builds on 1NF and deals with eliminating partial dependencies. It requires that each non-key attribute is fully functionally dependent on the entire primary key.
+Example: In a "Courses" table where you have student grades associated with both "Course ID" and "Student ID," if "Student Grade" depends only on "Course ID," it should be moved to a separate table to avoid partial dependency.
+
+
+
+
+3. Third Normal Form (3NF) ->
+Should be 2NF
+No Transitive Dependency
+
+Key points: 3NF builds further on 2NF and deals with eliminating transitive dependencies. It requires that non-key attributes are not dependent on other non-key attributes.
+Example: In a "Teachers" table where "Teacher Salary" is functionally dependent on "Teacher ID" but is also indirectly dependent on "Department" through "Teacher ID," you'd need to remove this dependency by creating separate tables.
+
+
+
+
+4. Boyce-Codd Normal Form (BCNF) ->
+Should be 3NF
+If say Y depends on X i.e. X->Y then X should be a part of the primary key
+
+Key points: BCNF, similar to 3NF, aims to eliminate anomalies by addressing certain types of dependencies called "all key dependencies." It requires that every determinant (attribute whose value determines other values in a row) must be a candidate key.
+Example: If a table has multiple candidate keys and certain non-prime attributes are functionally dependent on only a portion of the candidate key, breaking the table into smaller tables can ensure BCNF.

@@ -1,0 +1,18 @@
+Joins are used to combine data from multiple tables in a database.
+
+Inner Join -> Common data from table 1 and table 2
+Full Join -> All data from table 1 and table 2
+Left Join -> All data from table 1 and common data from table 1 and table 2
+Right Join -> All data from table 1 except common data from table 1 and table 2
+
+
+
+
+Transaction -> In this, all seps have to insured to be successfully executed, if any step of the transaction fails then the database should be rolled back to original state before the start of the transaction.
+
+For a database to be transactionable i.e. be able to perform transactions, then it should follow these properties -> 
+ACID -> Atomicity, Consistency, Isolation, Durability
+Atomicity -> We can not seperate out steps of a transaction from each other. Either all steps pass or all steps fail.
+Consistency -> State of the database before and after transactions should remain consistent except the data that was changed during transaction(given that the transaction is successful)
+Isolation -> Each transaction is independent of another transaction.
+Durability -> Transaction is final and can not be undone.
