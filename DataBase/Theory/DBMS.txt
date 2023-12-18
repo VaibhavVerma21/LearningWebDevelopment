@@ -1,0 +1,20 @@
+Myth: mySQL, Oracle, MongoDB are not database but database management systems.
+DBMS -> Database Management Systems 
+
+DBMS has two parts - the actual database and the management layer(systems).
+Management layer is just software, normal code/program which manages the data.
+
+DBMS ensures security, prevents inefficiency and is easy to use.
+
+
+
+Classifications of DBMS -
+
+1. Based on data models -
+Relational, Hierarchical, Network, Object based.
+
+2. Based on number of user -
+Single, Multiple
+
+3. Based on distribution of data -
+Centralized, Distributed

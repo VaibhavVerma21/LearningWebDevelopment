@@ -1,0 +1,17 @@
+Schema-
+It is blueprint of entire database. 
+It contains stuff like table name and its attributes, functions and relationships between them, database structure.
+
+
+Database instance- 
+Any point in time, if the database has been changed, then a new database instance is formed.
+At t=0 the database instance is empty. After sometime if new data is added to the database, then it leads to a new database instance.
+
+
+Database most famous way to arrange the data is three schema architecture.
+There are three layers in it as the name suggests-
+Internal schema -> It is responsible for storing, retrieving the data in and from physics hardware.
+Conceptual schema -> It is responsible for creating of tables function and relationships between those data for storing whole dataset.
+External schema -> It is responsible for showing the data that is customized for the user requesting it out from the whole dataset.
+
+This architecture enables the programmer to make changes on each level without effecting the other levels.

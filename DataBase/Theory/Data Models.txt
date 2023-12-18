@@ -1,0 +1,22 @@
+To increase storage efficiency and faster computation, the data is stored in complex data structures. For ease of use, the extraction of data from these complex structures is abstracted out. This is known as data modeling.
+
+Data Modeling is a collection of conepts or notations for describing the data, relationships between data.
+Data Modeling also deals with the process of creation, modification, and deletion of data.
+
+
+
+
+There are three types of data models-
+
+1. High-level conceptual data models -> In this model, the data relationships are described similar to real life relationships.
+Example -> ER Model -> In this model, every entity is related to a some attributes.
+
+
+2. Record based logical data models -> In this model, data is still easy to understand but it's representation is in a way that is more like how data will be stored in computers. There are three sub data models - >
+
+I. Hierarchical models -> In this model, data is represented in parent/child format or like an tree format. Each parent can have more than one child but each child has only one parent.
+II. Network models -> It can be treated as an extension of Hierarchical models, but here each child can have more than one parent.
+III. Relational models -> In this model, data is represented in tables and there are relationships between the tables.
+
+
+3. Physical data models -> This model takes care of storage, retrievation, and ordering of data in computer memory. It is database speicific.
