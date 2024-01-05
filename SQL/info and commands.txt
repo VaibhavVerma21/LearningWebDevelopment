@@ -1,0 +1,28 @@
+imperative -> JS, Java,C++,Ruby etc -> steps are given by coder to perforam an action
+declarattive -> SQL -> we tell end goal and it figures out how to do it
+Classification based on the how the language takes input from user to perform an action.
+
+
+SQL is used to interact with our database as it is a database management system.
+SQL is case insensitive.
+SQL statement has to end with semi colon.
+
+
+COMMANDS -> 
+
+\! <ANY SYSTEM COMMAND> -> Any kind of system(terminal) commands
+
+SHOW DATABASES; -> Show all databases
+
+CREATE DATABASE <NAME>; -> Create a new database
+
+DROP DATABASE <NAME>; -> Delete the database
+
+USE <NAME>; -> Select(Use) the database
+
+SHOW TABLES; -> Shows name of all tables in the selected database
+
+CREATE TABLE MOVIES (NAME VARCHAR(100), RATING INTEGER); -> Creates new table. In () the name of heading(column) of data and it's data type is given seperated by whitespace and is seperated by comma for different kinds of data(column).
+INSERT INTO MOVIES (NAME, RATING) values ("Movie1", 5); -> Inserts data into table. First the order in how the data has to be added is given using (), then the data that has to be added is based in ().
+
+SELECT * FROM <TABLE_NAME>; -> Prints all the data from the table which was passed.
